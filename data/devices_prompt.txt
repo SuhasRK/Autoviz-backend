@@ -1,0 +1,21 @@
+Here is a list of network devices data:
+
+{data}
+
+Please analyze this data and provide a summary with the following aggregated information:
+
+1. A breakdown of the clients by connection status.
+2. Provide a breakdown of devices by site.
+3. A breakdown of the clients by product types.
+4. Count the number of devices with the following issues:
+   - Devices with management IP address issues.
+   - Devices with default gateway issues.
+   - Devices with firmware version issues.
+   - Devices with configuration mismatches.
+5. A breakdown of the clients by operating system.
+6. A breakdown of the clients by unique management systems managing the devices.
+
+Please return the result as a json object like this. And always keep this format:
+1. Once you get the aggregated information generate highcharts configs for the data. Make different configs for different sets of keys. Keep only top 5 charts.
+2. And those configs will be first piece of response as key named highcharts_config and remove the aggregated data. 
+3. At the end add insights as the key and add insights. Give only 5 insights points.should be like a key value. number : insight
