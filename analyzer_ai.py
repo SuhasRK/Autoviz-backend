@@ -19,8 +19,8 @@ DATA_DIR = "data"
 load_dotenv()
 
 # Set up the client
-endpoint = "https://models.inference.ai.azure.com"
-model_name = "DeepSeek-V3"
+endpoint = "https://models.github.ai/inference"
+model_name = "deepseek/DeepSeek-V3-0324"
 token = os.getenv('MODEL_ACCESS_TOKEN')
 
 client = ChatCompletionsClient(
@@ -79,6 +79,8 @@ def get_analyzed_data():
             "role": "user",
             "content": prompt
         }],
+        temperature=1.0,
+        top_p=1.0,
         max_tokens=2000,
         model=model_name
     )
