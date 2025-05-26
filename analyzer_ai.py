@@ -10,7 +10,9 @@ from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app,
+     resources={r"/*": {"origins": "https://autoviz-f90f7.web.app"}},
+     supports_credentials=True)
 
 # Directory where JSON files are stored
 DATA_DIR = "data"
